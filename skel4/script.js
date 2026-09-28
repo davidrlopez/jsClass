@@ -17,12 +17,12 @@ function checkNumber(params) {
   if (userTry === secret) {
     message.textContent = "right number";
     submitBtn.disabled = true;
-  } else {
-    message.textContent = "wrong number";
-    userTry > secret
-      ? (message.textContent = "too high")
-      : (message.textContent = "too low");
-    tries > 0 ? tries-- : (submitBtn.disabled = true);
-    attempts.textContent = "Remaining attempts:" + tries;
+  }
+  message.textContent = userTry > secret ? "too high" : "too low";
+  tries--;
+  attempts.textContent = "Remaining attempts: " + tries;
+  if (tries <= 0) {
+    message.textContent = "Game over! Was " + secret;
+    guess.disabled = submitBtn.disabled = true;
   }
 }
