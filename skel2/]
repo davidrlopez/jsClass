@@ -1,0 +1,19 @@
+const inpEurosIniciales = document.getElementById("inpEurosIniciales");
+const inpRentAactual = document.getElementById("inpRentAactual");
+const inpDuracion = document.getElementById("inpDuracion");
+const btnCalcular = document.getElementById("btnCalcular");
+const taResultados = document.getElementById("taResultados");
+
+btnCalcular.addEventListener("click", calcular);
+function calcular(params) {
+  inpEurosIniciales = document.querySelector("input").value;
+  if (inpEurosIniciales < 100) {
+    return;
+  }
+  inpRentAactual = document.querySelector("input").value;
+  inpDuracion = document.querySelector("input").value;
+  let intereses = 0.3;
+  for (let index = 0; index < inpDuracion; index++) {
+    taResultados = inpEurosIniciales += inpEurosIniciales * intereses;
+  }
+}
