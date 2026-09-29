@@ -1,0 +1,49 @@
+const txtAdd = document.querySelector("#txtAdd");
+const mylist = document.querySelector("#mylist");
+const mycart = document.querySelector("#mycart");
+const btnAdd = document.querySelector("#btnAdd");
+const selectAll = document.querySelector("#btnSelAll");
+const selectNoth = document.querySelector("#btnSelNot");
+const selectInv = document.querySelector("#btnInvSel");
+const selectDel = document.querySelector("#btnDelSel");
+
+
+txtAdd.addEventListener("keydown", function (ev) {
+  if (ev.key === "Enter") {
+    let anItem = txtAdd.value.trim();
+    txtAdd.focus();
+    anItem.length > 0 ? addItemToList(anItem) : null;
+    {
+    }
+  }
+});
+
+btnAdd.addEventListener("click", function () {
+  const item = txtAdd.value.trim();
+  txtAdd.focus();
+  if (item) addItemToList(item);
+});
+selectAll.addEventListener("click", function () {
+document.querySelectorAll("li").forEach(li=>li.classList.add("seleccionado"))})
+selectNoth.addEventListener("click", function () {
+document.querySelectorAll("li").forEach(li=>li.classList.remove("seleccionado"))})
+selectInv.addEventListener("click", function () {
+document.querySelectorAll("li").forEach(li=>li.classList.toggle("seleccionado"))})
+selectDel.addEventListener("click", function () {
+document.querySelectorAll("li.seleccionado").forEach(li=>li.remove("seleccionado"))})
+
+btnMovSel.addEventListener("click", function () {
+  mylist.querySelectorAll("li.seleccionado").forEach(li => {
+    addItemToList(li.textContent, mycart);
+    li.remove();
+  });
+});
+function addItemToList(anItem, targetList = mylist) {
+  const newLI = document.createElement("li");
+  newLI.textContent = anItem;
+  newLI.addEventListener("click", function () {
+    newLI.classList.toggle("seleccionado");
+  });
+
+  targetList.append(newLI);
+}
