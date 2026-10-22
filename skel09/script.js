@@ -76,7 +76,9 @@ function popularChoice(choice) {
 
 function checkInsertButtonRequisites() {
   const valid =
-    studentName.value.trim().length > 0 && choice1.value != 0 && choice2.value != 0;
+    studentName.value.trim().length > 0 &&
+    choice1.value != 0 &&
+    choice2.value != 0;
   insertButton.disabled = !valid;
   errorMsg.textContent = valid ? "" : "Insert all the requirements";
   return valid;
