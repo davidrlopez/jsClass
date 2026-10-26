@@ -1,15 +1,10 @@
-//código JS
 const game = document.querySelector("#game");
 const year = document.querySelector("#year");
 const platform = document.querySelector("#platform");
 const sendBtn = document.querySelector("#sendBtn");
 const videogamesList = document.querySelector("#videogamesList>tbody");
 
-const db = [
-  { title: "hola", year: "1970", platform: "dos" },
-  { title: "adios", year: "1975", platform: "win" },
-  { title: "que tal", year: "1965", platform: "atari" },
-];
+let db = JSON.parse(localStorage.getItem("vgList") || "[]");
 
 clearValidation();
 renderGames();
@@ -19,7 +14,6 @@ year.addEventListener("input", validateYear);
 platform.addEventListener("change", validatePlatform);
 
 sendBtn.addEventListener("click", function () {
-  // se validan los tres antes de comprobar, para que se marquen todos a la vez
   const results = [validateGame(), validateYear(), validatePlatform()];
   if (results.every((ok) => ok)) {
     insertGame();
@@ -71,12 +65,10 @@ function validateYear() {
 }
 
 function validatePlatform() {
-  // la opción "Elige plataforma" no tiene value, así que se mira el índice
   return setValid(platform, platform.selectedIndex > 0);
 }
 
 function setValid(field, valid) {
-  // el borde lo pinta la clase del campo; el mensaje .invalid-feedback, la del .form-floating que lo envuelve
   [field, field.parentElement].forEach((el) => {
     el.classList.toggle("is-valid", valid);
     el.classList.toggle("is-invalid", !valid);
