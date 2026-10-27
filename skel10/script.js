@@ -3,9 +3,16 @@ const year = document.querySelector("#year");
 const platform = document.querySelector("#platform");
 const sendBtn = document.querySelector("#sendBtn");
 const videogamesList = document.querySelector("#videogamesList>tbody");
+const pattern = document.querySelector("#pattern");
 
 let db = JSON.parse(localStorage.getItem("vgList") || "[]");
+let order = false;
 
+db.sort((v1, v2) => {
+  return v1.title.toLowerCase().localeCompare(v2.title.toLowerCase());
+});
+
+pattern.addEventListener("input", renderGames);
 clearValidation();
 renderGames();
 
@@ -25,21 +32,29 @@ videogamesList.addEventListener("click", function (e) {
   const button = e.target.closest(".btn-danger");
   if (!button) return;
   db.splice(button.dataset.index, 1);
+  localStorage.setItem("vgList", JSON.stringify(db));
   renderGames();
 });
 
 function insertGame() {
   db.push({
-    title: game.value,
-    year: year.value,
-    platform: platform[platform.value].textContent,
+    title: game.value.trim(),
+    year: year.value.trim(),
+    platform: platform[platform.value].textContent.trim(),
   });
+  localStorage.setItem("vgList", JSON.stringify(db));
   renderGames();
 }
 
 function renderGames() {
+  const text = pattern.value.trim().toLowerCase();
   videogamesList.innerHTML = "";
   db.forEach((e, i) => {
+    const matches =
+      e.title.toLowerCase().includes(text) ||
+      e.year.toLowerCase().includes(text) ||
+      e.platform.toLowerCase().includes(text);
+    if (!matches) return;
     const newTr = videogamesList.insertRow();
     const newTD1 = newTr.insertCell();
     const newTD2 = newTr.insertCell();
