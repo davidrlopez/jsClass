@@ -41,12 +41,12 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 
 async fn get_messages(
     State(state): State<AppState>,
-    Query(from): Query<Since>,
+    Query(since): Query<Since>,
 ) -> Result<impl IntoResponse, StatusCode> {
     let json = sqlx::query_scalar!(
     r#"SELECT json_group_array(json_object('id', id, 'nick', nick, 'texto', mensaje, 'fecha', instante) ORDER BY id) AS "json!: String"
        FROM mensajes WHERE id > ?"#,
-    from.ultimo
+    since.ultimo
 )
         .fetch_one(&state.pool)
         .await
