@@ -1,0 +1,22 @@
+Compilando en release (la primera vez tarda)...
+OK: php -S devuelve los 50 mensajes
+OK: Rust devuelve los 50 mensajes
+OK: nginx + php-fpm devuelve los 50 mensajes
+OK: OPcache activo en php-fpm
+
+2000 peticiones, 50 a la vez. Cada celda: peticiones por segundo (p99 en ms)
+Filas -k: con wrk durante 5 s, HTTP/1.1 como el navegador; el p99 lleva su unidad
+                               php -S      nginx + php-fpm                 Rust
+GET 50 filas                10128 (6)            16643 (3)            24020 (3)
+GET 50 filas -k          no reutiliza       26083 (3.54ms)       31430 (1.87ms)
+GET 0 filas                 11635 (5)            16483 (8)            26399 (2)
+GET 0 filas -k           no reutiliza       26068 (3.12ms)       67017 (0.95ms)
+POST                        1931 (81)           2314 (198)            3467 (48)
+
+OK: php -S guardó los 2000 POST
+OK: nginx + php-fpm guardó los 2000 POST
+OK: Rust guardó los 2000 POST
+Memoria (RSS): php -S 60.9 MB
+               nginx + php-fpm 190.4 MB
+               Rust 12.4 MB
+Binario de Rust: 5.2M
