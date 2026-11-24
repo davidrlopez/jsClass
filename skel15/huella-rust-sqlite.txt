@@ -1,0 +1,34 @@
+======================================================================
+chat [75789]: 64-bit    Footprint: 9280 KB (16384 bytes per page)
+======================================================================
+
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+6736 KB        0 B          0 B         10    Malloc Small
+ 816 KB        0 B          0 B         50    Stack
+ 640 KB        0 B          0 B          9    Malloc Metadata
+ 304 KB        0 B          0 B          1    page table
+ 160 KB        0 B          0 B         39    __DATA_CONST
+ 144 KB        0 B          0 B          1    Malloc Tiny
+ 133 KB        0 B          0 B         73    __DATA_DIRTY
+  96 KB        0 B          0 B         58    Untagged
+  62 KB        0 B          0 B        216    unused dyld shared cache area
+  57 KB        0 B          0 B         34    __DATA
+  48 KB        0 B          0 B          2    Malloc Nano
+  32 KB        0 B          0 B          4    __TPRO_CONST
+  21 KB        0 B          0 B          1    __OBJC_RW
+  16 KB        0 B          0 B          1    Deferred Reclaim
+  16 KB        0 B          0 B          1    OS Alloc Once
+    0 B    2880 KB          0 B         85    __TEXT
+    0 B      16 KB          0 B          2    __LINKEDIT
+    0 B        0 B          0 B         41    __AUTH_CONST
+    0 B        0 B          0 B         11    __AUTH
+    0 B        0 B          0 B          1    __OBJC_RO
+    0 B        0 B          0 B          1    mapped file
+    ---        ---          ---        ---    ---
+9280 KB    2896 KB          0 B        643    TOTAL
+
+Auxiliary data:
+    phys_footprint: 9280 KB
+    phys_footprint_peak: 9280 KB
+

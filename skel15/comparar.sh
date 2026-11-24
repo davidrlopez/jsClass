@@ -1,18 +1,20 @@
 #!/bin/bash
-# Compara el chat en tres servidores: PHP con php -S, PHP como en producción (nginx + php-fpm + OPcache)
-# y Rust (release). Mide con ab, que viene con macOS.
+# Compara el chat en cuatro servidores: PHP con php -S, PHP como en producción (nginx + php-fpm + OPcache),
+# Rust con SQLite (chat-rs) y Rust con Postgres (chat-rs-pg). Mide con ab, que viene con macOS, y con wrk.
 # Uso, con el cargo run parado: ./comparar.sh   Más carga: C=50 ./comparar.sh
-# Para la columna de nginx + php-fpm: brew install nginx (php-fpm ya viene con el php de Homebrew).
+# Columnas opcionales: brew install nginx wrk postgresql@18 (php-fpm ya viene con el php de Homebrew).
 cd "$(dirname "$0")" || exit 1
 SKEL=$PWD
 RS=$SKEL/server/chat-rs
+RSPG=$SKEL/server/chat-rs-pg
 N=${N:-2000}   # shortcut: sin keep-alive cada petición abre un puerto; con N muy alto macOS se queda sin puertos
 C=${C:-10}
+PG_SYNC=${PG_SYNC:-on}   # off = misma garantía que SQLite con WAL y synchronous NORMAL
 
 fallo() { echo "FALLO: $1"; exit 1; }
 for cmd in ab php sqlite3 cargo curl; do command -v "$cmd" >/dev/null || fallo "falta $cmd"; done
 php -m | grep -qi '^pdo_sqlite$' || fallo "tu php no tiene pdo_sqlite"
-for p in 8000 8001 8080; do curl -s -o /dev/null "127.0.0.1:$p" && fallo "el $p está ocupado (¿el cargo run?)"; done
+for p in 8000 8001 8080 8082; do curl -s -o /dev/null "127.0.0.1:$p" && fallo "el $p está ocupado (¿el cargo run?)"; done
 
 FPM_BIN=$(command -v php-fpm || echo "$(brew --prefix php 2>/dev/null)/sbin/php-fpm")
 FPM=0
@@ -22,16 +24,28 @@ if command -v nginx >/dev/null && [ -x "$FPM_BIN" ]; then
 fi
 [ $FPM = 1 ] || echo "AVISO: falta nginx o php-fpm; la columna de nginx + php-fpm saldrá vacía (brew install nginx)"
 
+# Los postgresql@NN de Homebrew no se enlazan en el PATH, así que se buscan también en su carpeta.
+# Se busca el binario del servidor (postgres): libpq trae pg_ctl e initdb pero no el servidor
+PGB=$(dirname "$(command -v postgres 2>/dev/null || echo ./x)")
+[ -x "$PGB/postgres" ] || PGB=$(ls -d "$(brew --prefix 2>/dev/null)"/opt/postgresql@*/bin 2>/dev/null | tail -1)
+PG=1; for b in postgres pg_ctl initdb createdb psql; do [ -x "$PGB/$b" ] || PG=0; done
+[ $PG = 1 ] || echo "AVISO: falta Postgres; la columna de Rust + Postgres saldrá vacía (brew install postgresql@18)"
+
 echo "Compilando en release (la primera vez tarda)..."
 (cd "$RS" && cargo build --release -q) || fallo "cargo build --release"
 BIN=$RS/target/release/chat
+if [ $PG = 1 ]; then
+  (cd "$RSPG" && cargo build --release -q) || fallo "cargo build --release de chat-rs-pg"
+  BIN_PG=$RSPG/target/release/chat-pg
+fi
 
 # Una base de datos nueva por servidor, en una carpeta temporal: las tuyas no se tocan
 T=$(mktemp -d)
-mkdir -p "$T/phps" "$T/fpm" "$T/rs/data" "$T/nginx"
+mkdir -p "$T/phps" "$T/fpm" "$T/rs/data" "$T/nginx" "$T/rspg"
 cp "$SKEL"/chat_*.php "$T/phps/"
 cp "$SKEL"/chat_*.php "$T/fpm/"
 ln -s "$RS/static" "$T/rs/static"
+ln -s "$RS/static" "$T/rspg/static"
 SEMILLA="WITH RECURSIVE n(i) AS (SELECT 1 UNION ALL SELECT i+1 FROM n WHERE i<50)
 INSERT INTO mensajes(nick, mensaje) SELECT 'bot', 'mensaje ' || i FROM n;"
 for db in "$T/phps/chat.db" "$T/fpm/chat.db" "$T/rs/data/chat.db"; do
@@ -86,8 +100,24 @@ EOF
   nginx -c "$T/nginx.conf" -p "$T/nginx/" -e "$T/nginx/error.log" >/dev/null 2>&1 &
   NGINX_PID=$!; disown
 fi
+RSPG_PID=; PG_UP=
+PSQL=("$PGB/psql" -q -X -h 127.0.0.1 -p 5439 -U chat -d chat -v ON_ERROR_STOP=1)
+if [ $PG = 1 ]; then
+  # Un Postgres de usar y tirar en la carpeta temporal, con la configuración por defecto, por TCP como en compose
+  if "$PGB/initdb" -D "$T/pg" -U chat --auth=trust -E UTF8 --no-locale >"$T/pg.log" 2>&1 \
+    && "$PGB/pg_ctl" -D "$T/pg" -l "$T/pg.log" -w -o "-p 5439 -k $T -c listen_addresses=127.0.0.1 -c synchronous_commit=$PG_SYNC" start >/dev/null \
+    && PG_UP=1 && "$PGB/createdb" -h 127.0.0.1 -p 5439 -U chat chat \
+    && "${PSQL[@]}" -f "$(ls "$RSPG"/migrations/*_mensajes.sql)" \
+    && "${PSQL[@]}" -c "INSERT INTO mensajes(nick, mensaje) SELECT 'bot', 'mensaje ' || i FROM generate_series(1, 50) i"; then
+    (cd "$T/rspg" && DATABASE_URL=postgres://chat@127.0.0.1:5439/chat exec "$BIN_PG") >"$T/rspg.log" 2>&1 &
+    RSPG_PID=$!; disown
+  else
+    echo "AVISO: Postgres no arranca, se mide sin él:"; tail -5 "$T/pg.log"; PG=0
+  fi
+fi
 limpiar() {
-  for p in $PHP_PID $FPM_PID $NGINX_PID $RS_PID; do pkill -P "$p" 2>/dev/null; kill "$p" 2>/dev/null; done
+  for p in $PHP_PID $FPM_PID $NGINX_PID $RS_PID $RSPG_PID; do pkill -P "$p" 2>/dev/null; kill "$p" 2>/dev/null; done
+  [ -n "$PG_UP" ] && "$PGB/pg_ctl" -D "$T/pg" -m fast stop >/dev/null 2>&1
   rm -rf "$T"
 }
 trap limpiar EXIT
@@ -103,12 +133,17 @@ if [ $FPM = 1 ]; then
   listo "http://127.0.0.1:8001/$G50_PHP" \
     || { echo "AVISO: nginx + php-fpm no responde, se mide sin él. Sus últimos errores:"; cat "$T/nginx/error.log" "$T/fpm.log" 2>/dev/null | tail -5; FPM=0; }
 fi
+if [ $PG = 1 ]; then
+  listo "http://127.0.0.1:8082/$G50_RS" \
+    || { echo "AVISO: Rust + Postgres no responde, se mide sin él. Sus últimos errores:"; tail -5 "$T/rspg.log"; PG=0; }
+fi
 
 # Antes de medir, que todos devuelvan lo mismo
 cuenta() { curl -s "$1" | grep -o '"id"' | wc -l | tr -d ' '; }
 comprueba() { [ "$(cuenta "$2")" = 50 ] && echo "OK: $1 devuelve los 50 mensajes" || fallo "$1 no devuelve 50 mensajes"; }
 comprueba "php -S" "http://127.0.0.1:8000/$G50_PHP"
-comprueba "Rust" "http://127.0.0.1:8080/$G50_RS"
+comprueba "Rust + SQLite" "http://127.0.0.1:8080/$G50_RS"
+[ $PG = 1 ] && comprueba "Rust + Postgres" "http://127.0.0.1:8082/$G50_RS"
 if [ $FPM = 1 ]; then
   comprueba "nginx + php-fpm" "http://127.0.0.1:8001/$G50_PHP"
   [ "$(curl -s http://127.0.0.1:8001/opcache.php)" = true ] && echo "OK: OPcache activo en php-fpm" \
@@ -135,18 +170,20 @@ medir_k() { # url -> "pet/s (p99 con su unidad)"
     "$(echo "$out" | awk '$1=="99%" {print $2}')" "$([ -n "$bad" ] && echo " *$bad")"
 }
 fila() { # nombre ruta_php ruta_rust [opciones de ab]
-  local nombre=$1 php=$2 rs=$3 fpm=- phps m=medir; shift 3
+  local nombre=$1 php=$2 rs=$3 fpm=- pg=- phps m=medir; shift 3
   if [ "${1:-}" = -k ] && command -v wrk >/dev/null; then m=medir_k; set --; phps="no reutiliza"; fi
   [ -z "${phps:-}" ] && phps=$(medir "http://127.0.0.1:8000/$php" "$@")
   [ $FPM = 1 ] && fpm=$($m "http://127.0.0.1:8001/$php" "$@")
-  printf '%-16s %20s %20s %20s\n' "$nombre" "$phps" "$fpm" "$($m "http://127.0.0.1:8080/$rs" "$@")"
+  [ $PG = 1 ] && pg=$($m "http://127.0.0.1:8082/$rs" "$@")
+  printf '%-16s %20s %20s %20s %20s\n' "$nombre" "$phps" "$fpm" "$($m "http://127.0.0.1:8080/$rs" "$@")" "$pg"
 }
 
 echo
 echo "$N peticiones, $C a la vez. Cada celda: peticiones por segundo (p99 en ms)"
+[ $PG = 1 ] && echo "Postgres con synchronous_commit=$PG_SYNC"
 command -v wrk >/dev/null && echo "Filas -k: con wrk durante 5 s, HTTP/1.1 como el navegador; el p99 lleva su unidad" \
   || echo "AVISO: sin wrk, las filas -k usan ab (HTTP/1.0) y nginx no reutiliza la conexión (brew install wrk)"
-printf '%-16s %20s %20s %20s\n' "" "php -S" "nginx + php-fpm" "Rust"
+printf '%-16s %20s %20s %20s %20s\n' "" "php -S" "nginx + php-fpm" "Rust + SQLite" "Rust + Postgres"
 # -k: reutilizar la conexión, como hace el navegador entre un fetch y el siguiente
 # 0 filas: lo que pide el chat cada 2 s cuando no hay mensajes nuevos
 fila "GET 50 filas" "$G50_PHP" "$G50_RS"
@@ -159,10 +196,37 @@ echo
 filas() { sqlite3 "$2" 'SELECT count(*) FROM mensajes' | { read -r n; [ "$n" = $((50 + N)) ] && echo "OK: $1 guardó los $N POST" || echo "FALLO: $1 tiene $n filas, esperaba $((50 + N))"; }; }
 filas "php -S" "$T/phps/chat.db"
 [ $FPM = 1 ] && filas "nginx + php-fpm" "$T/fpm/chat.db"
-filas "Rust" "$T/rs/data/chat.db"
+filas "Rust + SQLite" "$T/rs/data/chat.db"
+if [ $PG = 1 ]; then
+  n=$("${PSQL[@]}" -tAc 'SELECT count(*) FROM mensajes')
+  [ "$n" = $((50 + N)) ] && echo "OK: Rust + Postgres guardó los $N POST" || echo "FALLO: Rust + Postgres tiene $n filas, esperaba $((50 + N))"
+fi
 
 mem() { ps -o rss= -p "$(echo "$@" | tr ' ' ,)" | awk '{s+=$1} END {printf "%.1f MB", s/1024}'; }
 echo "Memoria (RSS): php -S $(mem $PHP_PID $(pgrep -P $PHP_PID))"
 [ $FPM = 1 ] && echo "               nginx + php-fpm $(mem $FPM_PID $(pgrep -P $FPM_PID) $NGINX_PID $(pgrep -P $NGINX_PID))"
-echo "               Rust $(mem $RS_PID)"
+echo "               Rust + SQLite $(mem $RS_PID) (la base de datos va dentro del proceso)"
+if [ $PG = 1 ]; then
+  PG_PID=$(head -1 "$T/pg/postmaster.pid")
+  echo "               Rust + Postgres $(mem $RSPG_PID) el binario, más Postgres $(mem $PG_PID $(pgrep -P $PG_PID))"
+  echo "               (lo de Postgres es el RSS sumado de sus procesos: cuenta varias veces la memoria compartida y exagera)"
+fi
+# footprint (de macOS) mide lo mismo que la columna Memoria del Monitor de Actividad y, con varios
+# procesos, cuenta una sola vez lo que comparten. Es la cifra buena; la salida entera queda en huella-*.txt
+if command -v footprint >/dev/null; then
+  huella() { # nombre pid...
+    local nombre=$1 p; shift
+    local args=()
+    for p in "$@"; do args+=(-p "$p"); done
+    footprint "${args[@]}" > "$SKEL/huella-$nombre.txt" 2>&1
+    echo "  $nombre: $(grep -o 'Footprint: [0-9.]* [KMG]*B' "$SKEL/huella-$nombre.txt" | tail -1)"
+  }
+  echo "Huella sin contar dos veces lo compartido (footprint):"
+  huella rust-sqlite $RS_PID
+  if [ $PG = 1 ]; then
+    huella rust-postgres-binario $RSPG_PID
+    huella postgres $PG_PID $(pgrep -P $PG_PID)
+  fi
+  [ $FPM = 1 ] && huella php-fpm-nginx $FPM_PID $(pgrep -P $FPM_PID) $NGINX_PID $(pgrep -P $NGINX_PID)
+fi
 echo "Binario de Rust: $(du -h "$BIN" | cut -f1)"

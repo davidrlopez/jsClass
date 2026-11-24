@@ -1,0 +1,1212 @@
+======================================================================
+postgres [75842]: 64-bit    Footprint: 16 MB (16384 bytes per page)
+======================================================================
+
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+1056 KB        0 B          0 B          4    Malloc Small
+ 544 KB        0 B          0 B          9    Malloc Metadata
+ 352 KB        0 B          0 B          1    page table
+ 340 KB        0 B          0 B         28    __DATA
+ 303 KB        0 B          0 B         37    __DATA_DIRTY
+ 128 KB        0 B          0 B          1    Malloc Tiny
+  82 KB        0 B          0 B         33    unused dyld shared cache area
+  64 KB        0 B          0 B          2    Stack
+  64 KB        0 B          0 B          3    __TPRO_CONST
+  37 KB        0 B          0 B          1    __OBJC_RW
+  16 KB        0 B          0 B          1    OS Alloc Once
+  16 KB        0 B          0 B          1    Deferred Reclaim
+  16 KB        0 B          0 B          1    Activity Tracing
+  16 KB        0 B          0 B          1    Malloc Nano
+ 6152 B        0 B          0 B          6    __AUTH
+    0 B      80 KB          0 B          1    mapped file
+    0 B        0 B          0 B          2    Untagged
+    ---        ---          ---        ---    ---
+3040 KB      80 KB          0 B        134    TOTAL
+
+Shared with postgres [75845], postgres [76269], postgres [76270], postgres [76271], postgres [75844], postgres [75843], postgres [75933], postgres [75935], postgres [75936], postgres [75937], postgres [75938], postgres [75939], postgres [75847], postgres [75849], postgres [75941], postgres [75851], postgres [75850], postgres [75846]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  13 MB        0 B          0 B          9    Untagged
+  96 KB        0 B          0 B        133    __DATA
+    0 B    5856 KB          0 B        266    __TEXT
+    0 B    1088 KB          0 B        266    __LINKEDIT
+    0 B     528 KB          0 B        247    __DATA_CONST
+    0 B      16 KB          0 B          2    mapped file
+    ---        ---          ---        ---    ---
+  13 MB    7488 KB          0 B        923    TOTAL
+
+Shared with postgres [75843], postgres [75844], postgres [75845], postgres [75846], postgres [75847], postgres [75849], postgres [75850], postgres [75851]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          9    __DATA
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          9    TOTAL
+
+Auxiliary data:
+    phys_footprint: 16 MB
+    phys_footprint_peak: 16 MB
+
+======================================================================
+postgres [75843]: 64-bit    Footprint: 12 MB (16384 bytes per page)
+======================================================================
+
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+ 512 KB        0 B          0 B          4    Malloc Metadata
+ 496 KB        0 B          0 B          3    Malloc Small
+ 320 KB        0 B          0 B          1    page table
+ 191 KB        0 B          0 B         23    __DATA
+ 144 KB        0 B          0 B          1    Malloc Tiny
+ 142 KB        0 B          0 B         38    __DATA_DIRTY
+  63 KB        0 B          0 B         28    unused dyld shared cache area
+  48 KB        0 B          0 B          3    __TPRO_CONST
+  37 KB        0 B          0 B          1    __OBJC_RW
+  16 KB        0 B          0 B          1    Deferred Reclaim
+  16 KB        0 B          0 B          1    OS Alloc Once
+  16 KB        0 B          0 B          1    Malloc Nano
+  16 KB        0 B          0 B          2    Stack
+    0 B        0 B          0 B          2    Untagged
+    ---        ---          ---        ---    ---
+2016 KB        0 B          0 B        111    TOTAL
+
+Shared with postgres [75845], postgres [76269], postgres [76270], postgres [76271], postgres [75844], postgres [75933], postgres [75935], postgres [75936], postgres [75937], postgres [75938], postgres [75939], postgres [75847], postgres [75849], postgres [75941], postgres [75851], postgres [75850], postgres [75846]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          3    Malloc Metadata
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          3    TOTAL
+
+Shared with postgres [75844], postgres [75845], postgres [75937], postgres [75847], postgres [75939], postgres [75849], postgres [75850], postgres [75851], postgres [75846], postgres [76270]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          1    Malloc Small
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          1    TOTAL
+
+Shared with postgres [75845], postgres [76269], postgres [76270], postgres [76271], postgres [75844], postgres [75933], postgres [75842], postgres [75935], postgres [75936], postgres [75937], postgres [75938], postgres [75939], postgres [75847], postgres [75849], postgres [75941], postgres [75851], postgres [75850], postgres [75846]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+9792 KB        0 B          0 B          9    Untagged
+  96 KB        0 B          0 B        133    __DATA
+    0 B    5856 KB          0 B        266    __TEXT
+    0 B    1088 KB          0 B        266    __LINKEDIT
+    0 B     528 KB          0 B        247    __DATA_CONST
+    0 B        0 B          0 B          2    mapped file
+    ---        ---          ---        ---    ---
+9888 KB    7472 KB          0 B        923    TOTAL
+
+Shared with postgres [75842], postgres [75844], postgres [75845], postgres [75846], postgres [75847], postgres [75849], postgres [75850], postgres [75851]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          9    __DATA
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          9    TOTAL
+
+Shared with postgres [75845], postgres [75846], postgres [75847], postgres [75844]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+    0 B        0 B          0 B          5    __DATA
+    ---        ---          ---        ---    ---
+    0 B        0 B          0 B          5    TOTAL
+
+Auxiliary data:
+    phys_footprint: 12 MB
+    phys_footprint_peak: 12 MB
+
+======================================================================
+postgres [75937]: 64-bit    Footprint: 9056 KB (16384 bytes per page)
+======================================================================
+
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+2096 KB        0 B          0 B         12    Malloc Small
+ 672 KB        0 B          0 B          4    Malloc Metadata
+ 336 KB        0 B          0 B          1    page table
+ 303 KB        0 B          0 B         25    __DATA
+ 144 KB        0 B          0 B          1    Malloc Tiny
+ 142 KB        0 B          0 B         39    __DATA_DIRTY
+  75 KB        0 B          0 B         29    unused dyld shared cache area
+  48 KB        0 B          0 B          2    Stack
+  48 KB        0 B          0 B          3    __TPRO_CONST
+  37 KB        0 B          0 B          1    __OBJC_RW
+  16 KB        0 B          0 B          1    OS Alloc Once
+  16 KB        0 B          0 B          1    Deferred Reclaim
+  16 KB        0 B          0 B          1    Malloc Nano
+ 4464 B        0 B          0 B          3    __AUTH
+    0 B        0 B          0 B          2    Untagged
+    ---        ---          ---        ---    ---
+3952 KB        0 B          0 B        127    TOTAL
+
+Shared with postgres [75845], postgres [76269], postgres [76270], postgres [76271], postgres [75844], postgres [75843], postgres [75933], postgres [75935], postgres [75936], postgres [75938], postgres [75939], postgres [75847], postgres [75849], postgres [75941], postgres [75851], postgres [75850], postgres [75846]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          3    Malloc Metadata
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          3    TOTAL
+
+Shared with postgres [75843], postgres [75844], postgres [75845], postgres [75847], postgres [75939], postgres [75849], postgres [75850], postgres [75851], postgres [75846], postgres [76270]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          1    Malloc Small
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          1    TOTAL
+
+Shared with postgres [76271], postgres [75933], postgres [75935], postgres [75936], postgres [75938], postgres [75939], postgres [75941], postgres [75851], postgres [75850], postgres [76269], postgres [76270]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+ 128 KB        0 B          0 B          1    Untagged
+    ---        ---          ---        ---    ---
+ 128 KB        0 B          0 B          1    TOTAL
+
+Shared with postgres [75845], postgres [76269], postgres [76270], postgres [76271], postgres [75844], postgres [75843], postgres [75933], postgres [75842], postgres [75935], postgres [75936], postgres [75938], postgres [75939], postgres [75847], postgres [75849], postgres [75941], postgres [75851], postgres [75850], postgres [75846]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+4944 KB        0 B          0 B          9    Untagged
+  96 KB        0 B          0 B        133    __DATA
+    0 B    5856 KB          0 B        266    __TEXT
+    0 B    1088 KB          0 B        266    __LINKEDIT
+    0 B     528 KB          0 B        247    __DATA_CONST
+    0 B        0 B          0 B          2    mapped file
+    ---        ---          ---        ---    ---
+5040 KB    7472 KB          0 B        923    TOTAL
+
+Auxiliary data:
+    phys_footprint: 9056 KB
+    phys_footprint_peak: 9056 KB
+
+======================================================================
+postgres [75936]: 64-bit    Footprint: 9040 KB (16384 bytes per page)
+======================================================================
+
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+2112 KB        0 B          0 B          9    Malloc Small
+ 608 KB        0 B          0 B          4    Malloc Metadata
+ 320 KB        0 B          0 B          1    page table
+ 303 KB        0 B          0 B         25    __DATA
+ 144 KB        0 B          0 B          1    Malloc Tiny
+ 142 KB        0 B          0 B         39    __DATA_DIRTY
+  75 KB        0 B          0 B         29    unused dyld shared cache area
+  48 KB        0 B          0 B          2    Stack
+  48 KB        0 B          0 B          3    __TPRO_CONST
+  37 KB        0 B          0 B          1    __OBJC_RW
+  16 KB        0 B          0 B          1    Deferred Reclaim
+  16 KB        0 B          0 B          1    OS Alloc Once
+  16 KB        0 B          0 B          1    Malloc Nano
+ 4464 B        0 B          0 B          3    __AUTH
+    0 B        0 B          0 B          2    Untagged
+    ---        ---          ---        ---    ---
+3888 KB        0 B          0 B        124    TOTAL
+
+Shared with postgres [75845], postgres [76269], postgres [76270], postgres [76271], postgres [75844], postgres [75843], postgres [75933], postgres [75935], postgres [75937], postgres [75938], postgres [75939], postgres [75847], postgres [75849], postgres [75941], postgres [75851], postgres [75850], postgres [75846]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          3    Malloc Metadata
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          3    TOTAL
+
+Shared with postgres [76271], postgres [75933], postgres [75935], postgres [75937], postgres [75938], postgres [75939], postgres [75941], postgres [75851], postgres [75850], postgres [76269], postgres [76270]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+ 128 KB        0 B          0 B          1    Untagged
+    ---        ---          ---        ---    ---
+ 128 KB        0 B          0 B          1    TOTAL
+
+Shared with postgres [75845], postgres [76269], postgres [76270], postgres [76271], postgres [75844], postgres [75843], postgres [75933], postgres [75842], postgres [75935], postgres [75937], postgres [75938], postgres [75939], postgres [75847], postgres [75849], postgres [75941], postgres [75851], postgres [75850], postgres [75846]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+5008 KB        0 B          0 B          9    Untagged
+  96 KB        0 B          0 B        133    __DATA
+    0 B    5856 KB          0 B        266    __TEXT
+    0 B    1088 KB          0 B        266    __LINKEDIT
+    0 B     528 KB          0 B        247    __DATA_CONST
+    0 B        0 B          0 B          2    mapped file
+    ---        ---          ---        ---    ---
+5104 KB    7472 KB          0 B        923    TOTAL
+
+Auxiliary data:
+    phys_footprint: 9040 KB
+    phys_footprint_peak: 9040 KB
+
+======================================================================
+postgres [75939]: 64-bit    Footprint: 9024 KB (16384 bytes per page)
+======================================================================
+
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+2080 KB        0 B          0 B         10    Malloc Small
+ 640 KB        0 B          0 B          4    Malloc Metadata
+ 320 KB        0 B          0 B          1    page table
+ 303 KB        0 B          0 B         25    __DATA
+ 144 KB        0 B          0 B          1    Malloc Tiny
+ 142 KB        0 B          0 B         39    __DATA_DIRTY
+  75 KB        0 B          0 B         29    unused dyld shared cache area
+  48 KB        0 B          0 B          2    Stack
+  48 KB        0 B          0 B          3    __TPRO_CONST
+  37 KB        0 B          0 B          1    __OBJC_RW
+  16 KB        0 B          0 B          1    Deferred Reclaim
+  16 KB        0 B          0 B          1    OS Alloc Once
+  16 KB        0 B          0 B          1    Malloc Nano
+ 4464 B        0 B          0 B          3    __AUTH
+    0 B        0 B          0 B          2    Untagged
+    ---        ---          ---        ---    ---
+3888 KB        0 B          0 B        125    TOTAL
+
+Shared with postgres [75845], postgres [76269], postgres [76270], postgres [76271], postgres [75844], postgres [75843], postgres [75933], postgres [75935], postgres [75936], postgres [75937], postgres [75938], postgres [75847], postgres [75849], postgres [75941], postgres [75851], postgres [75850], postgres [75846]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          3    Malloc Metadata
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          3    TOTAL
+
+Shared with postgres [75843], postgres [75844], postgres [75845], postgres [75937], postgres [75847], postgres [75849], postgres [75850], postgres [75851], postgres [75846], postgres [76270]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          1    Malloc Small
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          1    TOTAL
+
+Shared with postgres [76271], postgres [75933], postgres [75935], postgres [75936], postgres [75937], postgres [75938], postgres [75941], postgres [75851], postgres [75850], postgres [76269], postgres [76270]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+ 128 KB        0 B          0 B          1    Untagged
+    ---        ---          ---        ---    ---
+ 128 KB        0 B          0 B          1    TOTAL
+
+Shared with postgres [75845], postgres [76269], postgres [76270], postgres [76271], postgres [75844], postgres [75843], postgres [75933], postgres [75842], postgres [75935], postgres [75936], postgres [75937], postgres [75938], postgres [75847], postgres [75849], postgres [75941], postgres [75851], postgres [75850], postgres [75846]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+4976 KB        0 B          0 B          9    Untagged
+  96 KB        0 B          0 B        133    __DATA
+    0 B    5856 KB          0 B        266    __TEXT
+    0 B    1088 KB          0 B        266    __LINKEDIT
+    0 B     528 KB          0 B        247    __DATA_CONST
+    0 B        0 B          0 B          2    mapped file
+    ---        ---          ---        ---    ---
+5072 KB    7472 KB          0 B        923    TOTAL
+
+Auxiliary data:
+    phys_footprint: 9024 KB
+    phys_footprint_peak: 9024 KB
+
+======================================================================
+postgres [75935]: 64-bit    Footprint: 8960 KB (16384 bytes per page)
+======================================================================
+
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+2064 KB        0 B          0 B          8    Malloc Small
+ 592 KB        0 B          0 B          4    Malloc Metadata
+ 320 KB        0 B          0 B          1    page table
+ 303 KB        0 B          0 B         25    __DATA
+ 144 KB        0 B          0 B          1    Malloc Tiny
+ 142 KB        0 B          0 B         39    __DATA_DIRTY
+  75 KB        0 B          0 B         29    unused dyld shared cache area
+  48 KB        0 B          0 B          2    Stack
+  48 KB        0 B          0 B          3    __TPRO_CONST
+  37 KB        0 B          0 B          1    __OBJC_RW
+  16 KB        0 B          0 B          1    OS Alloc Once
+  16 KB        0 B          0 B          1    Deferred Reclaim
+  16 KB        0 B          0 B          1    Malloc Nano
+ 4464 B        0 B          0 B          3    __AUTH
+    0 B        0 B          0 B          2    Untagged
+    ---        ---          ---        ---    ---
+3824 KB        0 B          0 B        123    TOTAL
+
+Shared with postgres [75845], postgres [76269], postgres [76270], postgres [76271], postgres [75844], postgres [75843], postgres [75933], postgres [75936], postgres [75937], postgres [75938], postgres [75939], postgres [75847], postgres [75849], postgres [75941], postgres [75851], postgres [75850], postgres [75846]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          3    Malloc Metadata
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          3    TOTAL
+
+Shared with postgres [76271], postgres [75933], postgres [75936], postgres [75937], postgres [75938], postgres [75939], postgres [75941], postgres [75851], postgres [75850], postgres [76269], postgres [76270]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+ 128 KB        0 B          0 B          1    Untagged
+    ---        ---          ---        ---    ---
+ 128 KB        0 B          0 B          1    TOTAL
+
+Shared with postgres [75845], postgres [76269], postgres [76270], postgres [76271], postgres [75844], postgres [75843], postgres [75933], postgres [75842], postgres [75936], postgres [75937], postgres [75938], postgres [75939], postgres [75847], postgres [75849], postgres [75941], postgres [75851], postgres [75850], postgres [75846]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+4992 KB        0 B          0 B          9    Untagged
+  96 KB        0 B          0 B        133    __DATA
+    0 B    5856 KB          0 B        266    __TEXT
+    0 B    1088 KB          0 B        266    __LINKEDIT
+    0 B     528 KB          0 B        247    __DATA_CONST
+    0 B        0 B          0 B          2    mapped file
+    ---        ---          ---        ---    ---
+5088 KB    7472 KB          0 B        923    TOTAL
+
+Auxiliary data:
+    phys_footprint: 8960 KB
+    phys_footprint_peak: 8960 KB
+
+======================================================================
+postgres [75941]: 64-bit    Footprint: 8944 KB (16384 bytes per page)
+======================================================================
+
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+2048 KB        0 B          0 B          7    Malloc Small
+ 576 KB        0 B          0 B          4    Malloc Metadata
+ 320 KB        0 B          0 B          1    page table
+ 303 KB        0 B          0 B         25    __DATA
+ 144 KB        0 B          0 B          1    Malloc Tiny
+ 142 KB        0 B          0 B         39    __DATA_DIRTY
+  75 KB        0 B          0 B         29    unused dyld shared cache area
+  48 KB        0 B          0 B          2    Stack
+  48 KB        0 B          0 B          3    __TPRO_CONST
+  37 KB        0 B          0 B          1    __OBJC_RW
+  16 KB        0 B          0 B          1    Deferred Reclaim
+  16 KB        0 B          0 B          1    OS Alloc Once
+  16 KB        0 B          0 B          1    Malloc Nano
+ 4464 B        0 B          0 B          3    __AUTH
+    0 B        0 B          0 B          2    Untagged
+    ---        ---          ---        ---    ---
+3792 KB        0 B          0 B        122    TOTAL
+
+Shared with postgres [75845], postgres [76269], postgres [76270], postgres [76271], postgres [75844], postgres [75843], postgres [75933], postgres [75935], postgres [75936], postgres [75937], postgres [75938], postgres [75939], postgres [75847], postgres [75849], postgres [75851], postgres [75850], postgres [75846]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          3    Malloc Metadata
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          3    TOTAL
+
+Shared with postgres [76271], postgres [75933], postgres [75935], postgres [75936], postgres [75937], postgres [75938], postgres [75939], postgres [75851], postgres [75850], postgres [76269], postgres [76270]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+ 128 KB        0 B          0 B          1    Untagged
+    ---        ---          ---        ---    ---
+ 128 KB        0 B          0 B          1    TOTAL
+
+Shared with postgres [75845], postgres [76269], postgres [76270], postgres [76271], postgres [75844], postgres [75843], postgres [75933], postgres [75842], postgres [75935], postgres [75936], postgres [75937], postgres [75938], postgres [75939], postgres [75847], postgres [75849], postgres [75851], postgres [75850], postgres [75846]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+5008 KB        0 B          0 B          9    Untagged
+  96 KB        0 B          0 B        133    __DATA
+    0 B    5856 KB          0 B        266    __TEXT
+    0 B    1088 KB          0 B        266    __LINKEDIT
+    0 B     528 KB          0 B        247    __DATA_CONST
+    0 B        0 B          0 B          2    mapped file
+    ---        ---          ---        ---    ---
+5104 KB    7472 KB          0 B        923    TOTAL
+
+Auxiliary data:
+    phys_footprint: 8944 KB
+    phys_footprint_peak: 8944 KB
+
+======================================================================
+postgres [75938]: 64-bit    Footprint: 8944 KB (16384 bytes per page)
+======================================================================
+
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+2048 KB        0 B          0 B          6    Malloc Small
+ 560 KB        0 B          0 B          4    Malloc Metadata
+ 320 KB        0 B          0 B          1    page table
+ 303 KB        0 B          0 B         25    __DATA
+ 144 KB        0 B          0 B          1    Malloc Tiny
+ 142 KB        0 B          0 B         39    __DATA_DIRTY
+  75 KB        0 B          0 B         29    unused dyld shared cache area
+  48 KB        0 B          0 B          2    Stack
+  48 KB        0 B          0 B          3    __TPRO_CONST
+  37 KB        0 B          0 B          1    __OBJC_RW
+  16 KB        0 B          0 B          1    OS Alloc Once
+  16 KB        0 B          0 B          1    Deferred Reclaim
+  16 KB        0 B          0 B          1    Malloc Nano
+ 4464 B        0 B          0 B          3    __AUTH
+    0 B        0 B          0 B          2    Untagged
+    ---        ---          ---        ---    ---
+3776 KB        0 B          0 B        121    TOTAL
+
+Shared with postgres [75845], postgres [76269], postgres [76270], postgres [76271], postgres [75844], postgres [75843], postgres [75933], postgres [75935], postgres [75936], postgres [75937], postgres [75939], postgres [75847], postgres [75849], postgres [75941], postgres [75851], postgres [75850], postgres [75846]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          3    Malloc Metadata
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          3    TOTAL
+
+Shared with postgres [76271], postgres [75933], postgres [75935], postgres [75936], postgres [75937], postgres [75939], postgres [75941], postgres [75851], postgres [75850], postgres [76269], postgres [76270]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+ 128 KB        0 B          0 B          1    Untagged
+    ---        ---          ---        ---    ---
+ 128 KB        0 B          0 B          1    TOTAL
+
+Shared with postgres [75845], postgres [76269], postgres [76270], postgres [76271], postgres [75844], postgres [75843], postgres [75933], postgres [75842], postgres [75935], postgres [75936], postgres [75937], postgres [75939], postgres [75847], postgres [75849], postgres [75941], postgres [75851], postgres [75850], postgres [75846]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+5024 KB        0 B          0 B          9    Untagged
+  96 KB        0 B          0 B        133    __DATA
+    0 B    5856 KB          0 B        266    __TEXT
+    0 B    1088 KB          0 B        266    __LINKEDIT
+    0 B     528 KB          0 B        247    __DATA_CONST
+    0 B        0 B          0 B          2    mapped file
+    ---        ---          ---        ---    ---
+5120 KB    7472 KB          0 B        923    TOTAL
+
+Auxiliary data:
+    phys_footprint: 8944 KB
+    phys_footprint_peak: 8944 KB
+
+======================================================================
+postgres [75933]: 64-bit    Footprint: 8944 KB (16384 bytes per page)
+======================================================================
+
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+2048 KB        0 B          0 B          6    Malloc Small
+ 560 KB        0 B          0 B          4    Malloc Metadata
+ 320 KB        0 B          0 B          1    page table
+ 303 KB        0 B          0 B         25    __DATA
+ 144 KB        0 B          0 B          1    Malloc Tiny
+ 142 KB        0 B          0 B         39    __DATA_DIRTY
+  75 KB        0 B          0 B         29    unused dyld shared cache area
+  48 KB        0 B          0 B          2    Stack
+  48 KB        0 B          0 B          3    __TPRO_CONST
+  37 KB        0 B          0 B          1    __OBJC_RW
+  16 KB        0 B          0 B          1    Deferred Reclaim
+  16 KB        0 B          0 B          1    OS Alloc Once
+  16 KB        0 B          0 B          1    Malloc Nano
+ 4464 B        0 B          0 B          3    __AUTH
+    0 B        0 B          0 B          2    Untagged
+    ---        ---          ---        ---    ---
+3776 KB        0 B          0 B        121    TOTAL
+
+Shared with postgres [75845], postgres [76269], postgres [76270], postgres [76271], postgres [75844], postgres [75843], postgres [75935], postgres [75936], postgres [75937], postgres [75938], postgres [75939], postgres [75847], postgres [75849], postgres [75941], postgres [75851], postgres [75850], postgres [75846]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          3    Malloc Metadata
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          3    TOTAL
+
+Shared with postgres [76271], postgres [75935], postgres [75936], postgres [75937], postgres [75938], postgres [75939], postgres [75941], postgres [75851], postgres [75850], postgres [76269], postgres [76270]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+ 128 KB        0 B          0 B          1    Untagged
+    ---        ---          ---        ---    ---
+ 128 KB        0 B          0 B          1    TOTAL
+
+Shared with postgres [75845], postgres [76269], postgres [76270], postgres [76271], postgres [75844], postgres [75843], postgres [75842], postgres [75935], postgres [75936], postgres [75937], postgres [75938], postgres [75939], postgres [75847], postgres [75849], postgres [75941], postgres [75851], postgres [75850], postgres [75846]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+5024 KB        0 B          0 B          9    Untagged
+  96 KB        0 B          0 B        133    __DATA
+    0 B    5856 KB          0 B        266    __TEXT
+    0 B    1088 KB          0 B        266    __LINKEDIT
+    0 B     528 KB          0 B        247    __DATA_CONST
+    0 B        0 B          0 B          2    mapped file
+    ---        ---          ---        ---    ---
+5120 KB    7472 KB          0 B        923    TOTAL
+
+Auxiliary data:
+    phys_footprint: 8944 KB
+    phys_footprint_peak: 8944 KB
+
+======================================================================
+postgres [76270]: 64-bit    Footprint: 8064 KB (16384 bytes per page)
+======================================================================
+
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+1728 KB        0 B          0 B          9    Malloc Small
+ 624 KB        0 B          0 B          4    Malloc Metadata
+ 320 KB        0 B          0 B          1    page table
+ 303 KB        0 B          0 B         25    __DATA
+ 144 KB        0 B          0 B          1    Malloc Tiny
+ 142 KB        0 B          0 B         39    __DATA_DIRTY
+  75 KB        0 B          0 B         29    unused dyld shared cache area
+  48 KB        0 B          0 B          2    Stack
+  48 KB        0 B          0 B          3    __TPRO_CONST
+  37 KB        0 B          0 B          1    __OBJC_RW
+  16 KB        0 B          0 B          1    Deferred Reclaim
+  16 KB        0 B          0 B          1    OS Alloc Once
+  16 KB        0 B          0 B          1    Malloc Nano
+ 4464 B        0 B          0 B          3    __AUTH
+    0 B        0 B          0 B          2    Untagged
+    ---        ---          ---        ---    ---
+3520 KB        0 B          0 B        124    TOTAL
+
+Shared with postgres [75845], postgres [76269], postgres [76271], postgres [75844], postgres [75843], postgres [75933], postgres [75935], postgres [75936], postgres [75937], postgres [75938], postgres [75939], postgres [75847], postgres [75849], postgres [75941], postgres [75851], postgres [75850], postgres [75846]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          3    Malloc Metadata
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          3    TOTAL
+
+Shared with postgres [75843], postgres [75844], postgres [75845], postgres [75937], postgres [75847], postgres [75939], postgres [75849], postgres [75850], postgres [75851], postgres [75846]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          1    Malloc Small
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          1    TOTAL
+
+Shared with postgres [76271], postgres [75933], postgres [75935], postgres [75936], postgres [75937], postgres [75938], postgres [75939], postgres [75941], postgres [75851], postgres [75850], postgres [76269]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+ 112 KB        0 B          0 B          1    Untagged
+    ---        ---          ---        ---    ---
+ 112 KB        0 B          0 B          1    TOTAL
+
+Shared with postgres [75845], postgres [76269], postgres [76271], postgres [75844], postgres [75843], postgres [75933], postgres [75842], postgres [75935], postgres [75936], postgres [75937], postgres [75938], postgres [75939], postgres [75847], postgres [75849], postgres [75941], postgres [75851], postgres [75850], postgres [75846]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+4400 KB        0 B          0 B          9    Untagged
+  96 KB        0 B          0 B        133    __DATA
+    0 B    5856 KB          0 B        266    __TEXT
+    0 B    1088 KB          0 B        266    __LINKEDIT
+    0 B     528 KB          0 B        247    __DATA_CONST
+    0 B        0 B          0 B          2    mapped file
+    ---        ---          ---        ---    ---
+4496 KB    7472 KB          0 B        923    TOTAL
+
+Auxiliary data:
+    phys_footprint: 8064 KB
+    phys_footprint_peak: 8064 KB
+
+======================================================================
+postgres [76269]: 64-bit    Footprint: 7968 KB (16384 bytes per page)
+======================================================================
+
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+1744 KB        0 B          0 B          6    Malloc Small
+ 560 KB        0 B          0 B          4    Malloc Metadata
+ 320 KB        0 B          0 B          1    page table
+ 303 KB        0 B          0 B         25    __DATA
+ 144 KB        0 B          0 B          1    Malloc Tiny
+ 142 KB        0 B          0 B         39    __DATA_DIRTY
+  75 KB        0 B          0 B         29    unused dyld shared cache area
+  48 KB        0 B          0 B          2    Stack
+  48 KB        0 B          0 B          3    __TPRO_CONST
+  37 KB        0 B          0 B          1    __OBJC_RW
+  16 KB        0 B          0 B          1    Deferred Reclaim
+  16 KB        0 B          0 B          1    OS Alloc Once
+  16 KB        0 B          0 B          1    Malloc Nano
+ 4464 B        0 B          0 B          3    __AUTH
+    0 B        0 B          0 B          2    Untagged
+    ---        ---          ---        ---    ---
+3472 KB        0 B          0 B        121    TOTAL
+
+Shared with postgres [75845], postgres [76270], postgres [76271], postgres [75844], postgres [75843], postgres [75933], postgres [75935], postgres [75936], postgres [75937], postgres [75938], postgres [75939], postgres [75847], postgres [75849], postgres [75941], postgres [75851], postgres [75850], postgres [75846]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          3    Malloc Metadata
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          3    TOTAL
+
+Shared with postgres [76271], postgres [75933], postgres [75935], postgres [75936], postgres [75937], postgres [75938], postgres [75939], postgres [75941], postgres [75851], postgres [75850], postgres [76270]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+ 112 KB        0 B          0 B          1    Untagged
+    ---        ---          ---        ---    ---
+ 112 KB        0 B          0 B          1    TOTAL
+
+Shared with postgres [75845], postgres [76270], postgres [76271], postgres [75844], postgres [75843], postgres [75933], postgres [75842], postgres [75935], postgres [75936], postgres [75937], postgres [75938], postgres [75939], postgres [75847], postgres [75849], postgres [75941], postgres [75851], postgres [75850], postgres [75846]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+4368 KB        0 B          0 B          9    Untagged
+  96 KB        0 B          0 B        133    __DATA
+    0 B    5856 KB          0 B        266    __TEXT
+    0 B    1088 KB          0 B        266    __LINKEDIT
+    0 B     528 KB          0 B        247    __DATA_CONST
+    0 B        0 B          0 B          2    mapped file
+    ---        ---          ---        ---    ---
+4464 KB    7472 KB          0 B        923    TOTAL
+
+Auxiliary data:
+    phys_footprint: 7968 KB
+    phys_footprint_peak: 7968 KB
+
+======================================================================
+postgres [76271]: 64-bit    Footprint: 7920 KB (16384 bytes per page)
+======================================================================
+
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+1728 KB        0 B          0 B          6    Malloc Small
+ 560 KB        0 B          0 B          4    Malloc Metadata
+ 320 KB        0 B          0 B          1    page table
+ 303 KB        0 B          0 B         25    __DATA
+ 144 KB        0 B          0 B          1    Malloc Tiny
+ 142 KB        0 B          0 B         39    __DATA_DIRTY
+  75 KB        0 B          0 B         29    unused dyld shared cache area
+  48 KB        0 B          0 B          2    Stack
+  48 KB        0 B          0 B          3    __TPRO_CONST
+  37 KB        0 B          0 B          1    __OBJC_RW
+  16 KB        0 B          0 B          1    OS Alloc Once
+  16 KB        0 B          0 B          1    Deferred Reclaim
+  16 KB        0 B          0 B          1    Malloc Nano
+ 4464 B        0 B          0 B          3    __AUTH
+    0 B        0 B          0 B          2    Untagged
+    ---        ---          ---        ---    ---
+3456 KB        0 B          0 B        121    TOTAL
+
+Shared with postgres [75845], postgres [76269], postgres [76270], postgres [75844], postgres [75843], postgres [75933], postgres [75935], postgres [75936], postgres [75937], postgres [75938], postgres [75939], postgres [75847], postgres [75849], postgres [75941], postgres [75851], postgres [75850], postgres [75846]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          3    Malloc Metadata
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          3    TOTAL
+
+Shared with postgres [75933], postgres [75935], postgres [75936], postgres [75937], postgres [75938], postgres [75939], postgres [75941], postgres [75851], postgres [75850], postgres [76269], postgres [76270]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+ 112 KB        0 B          0 B          1    Untagged
+    ---        ---          ---        ---    ---
+ 112 KB        0 B          0 B          1    TOTAL
+
+Shared with postgres [75845], postgres [76269], postgres [76270], postgres [75844], postgres [75843], postgres [75933], postgres [75842], postgres [75935], postgres [75936], postgres [75937], postgres [75938], postgres [75939], postgres [75847], postgres [75849], postgres [75941], postgres [75851], postgres [75850], postgres [75846]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+4336 KB        0 B          0 B          9    Untagged
+  96 KB        0 B          0 B        133    __DATA
+    0 B    5856 KB          0 B        266    __TEXT
+    0 B    1088 KB          0 B        266    __LINKEDIT
+    0 B     528 KB          0 B        247    __DATA_CONST
+    0 B        0 B          0 B          2    mapped file
+    ---        ---          ---        ---    ---
+4432 KB    7472 KB          0 B        923    TOTAL
+
+Auxiliary data:
+    phys_footprint: 7920 KB
+    phys_footprint_peak: 7920 KB
+
+======================================================================
+postgres [75849]: 64-bit    Footprint: 6432 KB (16384 bytes per page)
+======================================================================
+
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+ 512 KB        0 B          0 B          4    Malloc Metadata
+ 448 KB        0 B          0 B          3    Malloc Small
+ 304 KB        0 B          0 B          1    page table
+ 191 KB        0 B          0 B         23    __DATA
+ 142 KB        0 B          0 B         38    __DATA_DIRTY
+ 128 KB        0 B          0 B          1    Malloc Tiny
+  63 KB        0 B          0 B         28    unused dyld shared cache area
+  48 KB        0 B          0 B          3    __TPRO_CONST
+  37 KB        0 B          0 B          1    __OBJC_RW
+  32 KB        0 B          0 B          2    Stack
+  16 KB        0 B          0 B          1    Deferred Reclaim
+  16 KB        0 B          0 B          1    OS Alloc Once
+  16 KB        0 B          0 B          1    Malloc Nano
+    0 B        0 B          0 B          2    Untagged
+    ---        ---          ---        ---    ---
+1952 KB        0 B          0 B        111    TOTAL
+
+Shared with postgres [75845], postgres [76269], postgres [76270], postgres [76271], postgres [75844], postgres [75843], postgres [75933], postgres [75935], postgres [75936], postgres [75937], postgres [75938], postgres [75939], postgres [75847], postgres [75941], postgres [75851], postgres [75850], postgres [75846]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          3    Malloc Metadata
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          3    TOTAL
+
+Shared with postgres [75850], postgres [75851]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+    0 B        0 B          0 B          3    __DATA
+    ---        ---          ---        ---    ---
+    0 B        0 B          0 B          3    TOTAL
+
+Shared with postgres [75843], postgres [75844], postgres [75845], postgres [75937], postgres [75847], postgres [75939], postgres [75850], postgres [75851], postgres [75846], postgres [76270]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          1    Malloc Small
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          1    TOTAL
+
+Shared with postgres [75845], postgres [76269], postgres [76270], postgres [76271], postgres [75844], postgres [75843], postgres [75933], postgres [75842], postgres [75935], postgres [75936], postgres [75937], postgres [75938], postgres [75939], postgres [75847], postgres [75941], postgres [75851], postgres [75850], postgres [75846]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+4432 KB        0 B          0 B          9    Untagged
+  96 KB        0 B          0 B        133    __DATA
+    0 B    5856 KB          0 B        266    __TEXT
+    0 B    1088 KB          0 B        266    __LINKEDIT
+    0 B     528 KB          0 B        247    __DATA_CONST
+    0 B        0 B          0 B          2    mapped file
+    ---        ---          ---        ---    ---
+4528 KB    7472 KB          0 B        923    TOTAL
+
+Shared with postgres [75842], postgres [75843], postgres [75844], postgres [75845], postgres [75846], postgres [75847], postgres [75850], postgres [75851]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          9    __DATA
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          9    TOTAL
+
+Auxiliary data:
+    phys_footprint: 6432 KB
+    phys_footprint_peak: 6432 KB
+
+======================================================================
+postgres [75847]: 64-bit    Footprint: 3504 KB (16384 bytes per page)
+======================================================================
+
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+ 528 KB        0 B          0 B          4    Malloc Metadata
+ 432 KB        0 B          0 B          4    Malloc Small
+ 304 KB        0 B          0 B          1    page table
+ 191 KB        0 B          0 B         23    __DATA
+ 142 KB        0 B          0 B         38    __DATA_DIRTY
+ 128 KB        0 B          0 B          1    Malloc Tiny
+  63 KB        0 B          0 B         28    unused dyld shared cache area
+  48 KB        0 B          0 B          3    __TPRO_CONST
+  37 KB        0 B          0 B          1    __OBJC_RW
+  32 KB        0 B          0 B          2    Stack
+  16 KB        0 B          0 B          1    Deferred Reclaim
+  16 KB        0 B          0 B          1    OS Alloc Once
+  16 KB        0 B          0 B          1    Malloc Nano
+    0 B        0 B          0 B          2    Untagged
+    ---        ---          ---        ---    ---
+1952 KB        0 B          0 B        112    TOTAL
+
+Shared with postgres [75845], postgres [76269], postgres [76270], postgres [76271], postgres [75844], postgres [75843], postgres [75933], postgres [75935], postgres [75936], postgres [75937], postgres [75938], postgres [75939], postgres [75849], postgres [75941], postgres [75851], postgres [75850], postgres [75846]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          3    Malloc Metadata
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          3    TOTAL
+
+Shared with postgres [75843], postgres [75844], postgres [75845], postgres [75937], postgres [75939], postgres [75849], postgres [75850], postgres [75851], postgres [75846], postgres [76270]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          1    Malloc Small
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          1    TOTAL
+
+Shared with postgres [75845], postgres [76269], postgres [76270], postgres [76271], postgres [75844], postgres [75843], postgres [75933], postgres [75842], postgres [75935], postgres [75936], postgres [75937], postgres [75938], postgres [75939], postgres [75849], postgres [75941], postgres [75851], postgres [75850], postgres [75846]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+1504 KB        0 B          0 B          9    Untagged
+  96 KB        0 B          0 B        133    __DATA
+    0 B    5856 KB          0 B        266    __TEXT
+    0 B    1088 KB          0 B        266    __LINKEDIT
+    0 B     528 KB          0 B        247    __DATA_CONST
+    0 B        0 B          0 B          2    mapped file
+    ---        ---          ---        ---    ---
+1600 KB    7472 KB          0 B        923    TOTAL
+
+Shared with postgres [75842], postgres [75843], postgres [75844], postgres [75845], postgres [75846], postgres [75849], postgres [75850], postgres [75851]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          9    __DATA
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          9    TOTAL
+
+Shared with postgres [75845], postgres [75846], postgres [75843], postgres [75844]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+    0 B        0 B          0 B          5    __DATA
+    ---        ---          ---        ---    ---
+    0 B        0 B          0 B          5    TOTAL
+
+Auxiliary data:
+    phys_footprint: 3504 KB
+    phys_footprint_peak: 3504 KB
+
+======================================================================
+postgres [75850]: 64-bit    Footprint: 3008 KB (16384 bytes per page)
+======================================================================
+
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+ 736 KB        0 B          0 B          3    Malloc Small
+ 512 KB        0 B          0 B          4    Malloc Metadata
+ 304 KB        0 B          0 B          1    page table
+ 239 KB        0 B          0 B         23    __DATA
+ 142 KB        0 B          0 B         38    __DATA_DIRTY
+ 128 KB        0 B          0 B          1    Malloc Tiny
+  63 KB        0 B          0 B         28    unused dyld shared cache area
+  48 KB        0 B          0 B          3    __TPRO_CONST
+  37 KB        0 B          0 B          1    __OBJC_RW
+  16 KB        0 B          0 B          1    OS Alloc Once
+  16 KB        0 B          0 B          1    Deferred Reclaim
+  16 KB        0 B          0 B          1    Malloc Nano
+  16 KB        0 B          0 B          2    Stack
+    0 B        0 B          0 B          2    Untagged
+    ---        ---          ---        ---    ---
+2272 KB        0 B          0 B        111    TOTAL
+
+Shared with postgres [75845], postgres [76269], postgres [76270], postgres [76271], postgres [75844], postgres [75843], postgres [75933], postgres [75935], postgres [75936], postgres [75937], postgres [75938], postgres [75939], postgres [75847], postgres [75849], postgres [75941], postgres [75851], postgres [75846]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          3    Malloc Metadata
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          3    TOTAL
+
+Shared with postgres [75849], postgres [75851]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+    0 B        0 B          0 B          3    __DATA
+    ---        ---          ---        ---    ---
+    0 B        0 B          0 B          3    TOTAL
+
+Shared with postgres [75843], postgres [75844], postgres [75845], postgres [75937], postgres [75847], postgres [75939], postgres [75849], postgres [75851], postgres [75846], postgres [76270]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          1    Malloc Small
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          1    TOTAL
+
+Shared with postgres [76271], postgres [75933], postgres [75935], postgres [75936], postgres [75937], postgres [75938], postgres [75939], postgres [75941], postgres [75851], postgres [76269], postgres [76270]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          1    Untagged
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          1    TOTAL
+
+Shared with postgres [75845], postgres [76269], postgres [76270], postgres [76271], postgres [75844], postgres [75843], postgres [75933], postgres [75842], postgres [75935], postgres [75936], postgres [75937], postgres [75938], postgres [75939], postgres [75847], postgres [75849], postgres [75941], postgres [75851], postgres [75846]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+ 672 KB        0 B          0 B          9    Untagged
+  96 KB        0 B          0 B        133    __DATA
+    0 B    5856 KB          0 B        266    __TEXT
+    0 B    1088 KB          0 B        266    __LINKEDIT
+    0 B     528 KB          0 B        247    __DATA_CONST
+    0 B        0 B          0 B          2    mapped file
+    ---        ---          ---        ---    ---
+ 768 KB    7472 KB          0 B        923    TOTAL
+
+Shared with postgres [75842], postgres [75843], postgres [75844], postgres [75845], postgres [75846], postgres [75847], postgres [75849], postgres [75851]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          9    __DATA
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          9    TOTAL
+
+Auxiliary data:
+    phys_footprint: 3008 KB
+    phys_footprint_peak: 3008 KB
+
+======================================================================
+postgres [75844]: 64-bit    Footprint: 2896 KB (16384 bytes per page)
+======================================================================
+
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+ 512 KB        0 B          0 B          4    Malloc Metadata
+ 432 KB        0 B          0 B          3    Malloc Small
+ 304 KB        0 B          0 B          1    page table
+ 191 KB        0 B          0 B         23    __DATA
+ 142 KB        0 B          0 B         38    __DATA_DIRTY
+ 128 KB        0 B          0 B          1    Malloc Tiny
+  63 KB        0 B          0 B         28    unused dyld shared cache area
+  48 KB        0 B          0 B          3    __TPRO_CONST
+  37 KB        0 B          0 B          1    __OBJC_RW
+  16 KB        0 B          0 B          1    Deferred Reclaim
+  16 KB        0 B          0 B          1    OS Alloc Once
+  16 KB        0 B          0 B          2    Stack
+  16 KB        0 B          0 B          1    Malloc Nano
+    0 B        0 B          0 B          2    Untagged
+    ---        ---          ---        ---    ---
+1920 KB        0 B          0 B        111    TOTAL
+
+Shared with postgres [75845], postgres [76269], postgres [76270], postgres [76271], postgres [75843], postgres [75933], postgres [75935], postgres [75936], postgres [75937], postgres [75938], postgres [75939], postgres [75847], postgres [75849], postgres [75941], postgres [75851], postgres [75850], postgres [75846]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          3    Malloc Metadata
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          3    TOTAL
+
+Shared with postgres [75843], postgres [75845], postgres [75937], postgres [75847], postgres [75939], postgres [75849], postgres [75850], postgres [75851], postgres [75846], postgres [76270]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          1    Malloc Small
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          1    TOTAL
+
+Shared with postgres [75845], postgres [76269], postgres [76270], postgres [76271], postgres [75843], postgres [75933], postgres [75842], postgres [75935], postgres [75936], postgres [75937], postgres [75938], postgres [75939], postgres [75847], postgres [75849], postgres [75941], postgres [75851], postgres [75850], postgres [75846]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+ 928 KB        0 B          0 B          9    Untagged
+  96 KB        0 B          0 B        133    __DATA
+    0 B    5856 KB          0 B        266    __TEXT
+    0 B    1088 KB          0 B        266    __LINKEDIT
+    0 B     528 KB          0 B        247    __DATA_CONST
+    0 B        0 B          0 B          2    mapped file
+    ---        ---          ---        ---    ---
+1024 KB    7472 KB          0 B        923    TOTAL
+
+Shared with postgres [75842], postgres [75843], postgres [75845], postgres [75846], postgres [75847], postgres [75849], postgres [75850], postgres [75851]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          9    __DATA
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          9    TOTAL
+
+Shared with postgres [75845], postgres [75846], postgres [75847], postgres [75843]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+    0 B        0 B          0 B          5    __DATA
+    ---        ---          ---        ---    ---
+    0 B        0 B          0 B          5    TOTAL
+
+Auxiliary data:
+    phys_footprint: 2896 KB
+    phys_footprint_peak: 2896 KB
+
+======================================================================
+postgres [75851]: 64-bit    Footprint: 2784 KB (16384 bytes per page)
+======================================================================
+
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+ 688 KB        0 B          0 B          3    Malloc Small
+ 512 KB        0 B          0 B          4    Malloc Metadata
+ 304 KB        0 B          0 B          1    page table
+ 223 KB        0 B          0 B         23    __DATA
+ 142 KB        0 B          0 B         38    __DATA_DIRTY
+ 128 KB        0 B          0 B          1    Malloc Tiny
+  63 KB        0 B          0 B         28    unused dyld shared cache area
+  48 KB        0 B          0 B          3    __TPRO_CONST
+  37 KB        0 B          0 B          1    __OBJC_RW
+  32 KB        0 B          0 B          2    Stack
+  16 KB        0 B          0 B          1    Deferred Reclaim
+  16 KB        0 B          0 B          1    OS Alloc Once
+  16 KB        0 B          0 B          1    Malloc Nano
+    0 B        0 B          0 B          2    Untagged
+    ---        ---          ---        ---    ---
+2224 KB        0 B          0 B        111    TOTAL
+
+Shared with postgres [75845], postgres [76269], postgres [76270], postgres [76271], postgres [75844], postgres [75843], postgres [75933], postgres [75935], postgres [75936], postgres [75937], postgres [75938], postgres [75939], postgres [75847], postgres [75849], postgres [75941], postgres [75850], postgres [75846]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          3    Malloc Metadata
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          3    TOTAL
+
+Shared with postgres [75849], postgres [75850]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+    0 B        0 B          0 B          3    __DATA
+    ---        ---          ---        ---    ---
+    0 B        0 B          0 B          3    TOTAL
+
+Shared with postgres [75843], postgres [75844], postgres [75845], postgres [75937], postgres [75847], postgres [75939], postgres [75849], postgres [75850], postgres [75846], postgres [76270]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          1    Malloc Small
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          1    TOTAL
+
+Shared with postgres [76271], postgres [75933], postgres [75935], postgres [75936], postgres [75937], postgres [75938], postgres [75939], postgres [75941], postgres [75850], postgres [76269], postgres [76270]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+    0 B        0 B          0 B          1    Untagged
+    ---        ---          ---        ---    ---
+    0 B        0 B          0 B          1    TOTAL
+
+Shared with postgres [75845], postgres [76269], postgres [76270], postgres [76271], postgres [75844], postgres [75843], postgres [75933], postgres [75842], postgres [75935], postgres [75936], postgres [75937], postgres [75938], postgres [75939], postgres [75847], postgres [75849], postgres [75941], postgres [75850], postgres [75846]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+ 512 KB        0 B          0 B          9    Untagged
+  96 KB        0 B          0 B        133    __DATA
+    0 B    5856 KB          0 B        266    __TEXT
+    0 B    1088 KB          0 B        266    __LINKEDIT
+    0 B     528 KB          0 B        247    __DATA_CONST
+    0 B        0 B          0 B          2    mapped file
+    ---        ---          ---        ---    ---
+ 608 KB    7472 KB          0 B        923    TOTAL
+
+Shared with postgres [75842], postgres [75843], postgres [75844], postgres [75845], postgres [75846], postgres [75847], postgres [75849], postgres [75850]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          9    __DATA
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          9    TOTAL
+
+Auxiliary data:
+    phys_footprint: 2784 KB
+    phys_footprint_peak: 2784 KB
+
+======================================================================
+postgres [75846]: 64-bit    Footprint: 2240 KB (16384 bytes per page)
+======================================================================
+
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+ 512 KB        0 B          0 B          4    Malloc Metadata
+ 448 KB        0 B          0 B          3    Malloc Small
+ 304 KB        0 B          0 B          1    page table
+ 191 KB        0 B          0 B         23    __DATA
+ 142 KB        0 B          0 B         38    __DATA_DIRTY
+ 128 KB        0 B          0 B          1    Malloc Tiny
+  63 KB        0 B          0 B         28    unused dyld shared cache area
+  48 KB        0 B          0 B          3    __TPRO_CONST
+  37 KB        0 B          0 B          1    __OBJC_RW
+  16 KB        0 B          0 B          1    Deferred Reclaim
+  16 KB        0 B          0 B          1    OS Alloc Once
+  16 KB        0 B          0 B          1    Malloc Nano
+  16 KB        0 B          0 B          2    Stack
+    0 B        0 B          0 B          2    Untagged
+    ---        ---          ---        ---    ---
+1936 KB        0 B          0 B        111    TOTAL
+
+Shared with postgres [75845], postgres [76269], postgres [76270], postgres [76271], postgres [75844], postgres [75843], postgres [75933], postgres [75935], postgres [75936], postgres [75937], postgres [75938], postgres [75939], postgres [75847], postgres [75849], postgres [75941], postgres [75851], postgres [75850]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          3    Malloc Metadata
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          3    TOTAL
+
+Shared with postgres [75843], postgres [75844], postgres [75845], postgres [75937], postgres [75847], postgres [75939], postgres [75849], postgres [75850], postgres [75851], postgres [76270]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          1    Malloc Small
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          1    TOTAL
+
+Shared with postgres [75845], postgres [76269], postgres [76270], postgres [76271], postgres [75844], postgres [75843], postgres [75933], postgres [75842], postgres [75935], postgres [75936], postgres [75937], postgres [75938], postgres [75939], postgres [75847], postgres [75849], postgres [75941], postgres [75851], postgres [75850]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+ 256 KB        0 B          0 B          9    Untagged
+  96 KB        0 B          0 B        133    __DATA
+    0 B    5856 KB          0 B        266    __TEXT
+    0 B    1088 KB          0 B        266    __LINKEDIT
+    0 B     528 KB          0 B        247    __DATA_CONST
+    0 B        0 B          0 B          2    mapped file
+    ---        ---          ---        ---    ---
+ 352 KB    7472 KB          0 B        923    TOTAL
+
+Shared with postgres [75842], postgres [75843], postgres [75844], postgres [75845], postgres [75847], postgres [75849], postgres [75850], postgres [75851]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          9    __DATA
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          9    TOTAL
+
+Shared with postgres [75845], postgres [75847], postgres [75843], postgres [75844]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+    0 B        0 B          0 B          5    __DATA
+    ---        ---          ---        ---    ---
+    0 B        0 B          0 B          5    TOTAL
+
+Auxiliary data:
+    phys_footprint: 2240 KB
+    phys_footprint_peak: 2240 KB
+
+======================================================================
+postgres [75845]: 64-bit    Footprint: 2192 KB (16384 bytes per page)
+======================================================================
+
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+ 512 KB        0 B          0 B          4    Malloc Metadata
+ 432 KB        0 B          0 B          3    Malloc Small
+ 304 KB        0 B          0 B          1    page table
+ 191 KB        0 B          0 B         23    __DATA
+ 142 KB        0 B          0 B         38    __DATA_DIRTY
+ 128 KB        0 B          0 B          1    Malloc Tiny
+  63 KB        0 B          0 B         28    unused dyld shared cache area
+  48 KB        0 B          0 B          3    __TPRO_CONST
+  37 KB        0 B          0 B          1    __OBJC_RW
+  16 KB        0 B          0 B          1    OS Alloc Once
+  16 KB        0 B          0 B          1    Deferred Reclaim
+  16 KB        0 B          0 B          2    Stack
+  16 KB        0 B          0 B          1    Malloc Nano
+    0 B        0 B          0 B          2    Untagged
+    ---        ---          ---        ---    ---
+1920 KB        0 B          0 B        111    TOTAL
+
+Shared with postgres [76269], postgres [76270], postgres [76271], postgres [75844], postgres [75843], postgres [75933], postgres [75935], postgres [75936], postgres [75937], postgres [75938], postgres [75939], postgres [75847], postgres [75849], postgres [75941], postgres [75851], postgres [75850], postgres [75846]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          3    Malloc Metadata
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          3    TOTAL
+
+Shared with postgres [75843], postgres [75844], postgres [75937], postgres [75847], postgres [75939], postgres [75849], postgres [75850], postgres [75851], postgres [75846], postgres [76270]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          1    Malloc Small
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          1    TOTAL
+
+Shared with postgres [76269], postgres [76270], postgres [76271], postgres [75844], postgres [75843], postgres [75933], postgres [75842], postgres [75935], postgres [75936], postgres [75937], postgres [75938], postgres [75939], postgres [75847], postgres [75849], postgres [75941], postgres [75851], postgres [75850], postgres [75846]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+ 224 KB        0 B          0 B          9    Untagged
+  96 KB        0 B          0 B        133    __DATA
+    0 B    5856 KB          0 B        266    __TEXT
+    0 B    1088 KB          0 B        266    __LINKEDIT
+    0 B     528 KB          0 B        247    __DATA_CONST
+    0 B        0 B          0 B          2    mapped file
+    ---        ---          ---        ---    ---
+ 320 KB    7472 KB          0 B        923    TOTAL
+
+Shared with postgres [75842], postgres [75843], postgres [75844], postgres [75846], postgres [75847], postgres [75849], postgres [75850], postgres [75851]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          9    __DATA
+    ---        ---          ---        ---    ---
+  16 KB        0 B          0 B          9    TOTAL
+
+Shared with postgres [75846], postgres [75847], postgres [75843], postgres [75844]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+    0 B        0 B          0 B          5    __DATA
+    ---        ---          ---        ---    ---
+    0 B        0 B          0 B          5    TOTAL
+
+Auxiliary data:
+    phys_footprint: 2192 KB
+    phys_footprint_peak: 2192 KB
+
+======================================================================
+Shared Cache A9F7EF23-50B6-30F4-A6EB-B2331720C664
+======================================================================
+
+Shared with postgres [75845], postgres [76269], postgres [76270], postgres [76271], postgres [75844], postgres [75843], postgres [75933], postgres [75842], postgres [75935], postgres [75936], postgres [75937], postgres [75938], postgres [75939], postgres [75847], postgres [75849], postgres [75941], postgres [75851], postgres [75850], postgres [75846]:
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+    0 B        0 B          0 B       2396    __AUTH
+    0 B        0 B          0 B       5140    __DATA_DIRTY
+    0 B        0 B          0 B       6992    __TEXT
+    0 B        0 B          0 B       5738    __DATA_CONST
+    0 B        0 B          0 B       5795    __AUTH_CONST
+    0 B        0 B          0 B       4841    __DATA
+    0 B        0 B          0 B      19973    unused dyld shared cache area
+    0 B        0 B          0 B         19    __LINKEDIT
+    0 B        0 B          0 B         19    __FONT_DATA
+    0 B        0 B          0 B         19    __TPRO_CONST
+    0 B        0 B          0 B         19    __OBJC_RO
+    ---        ---          ---        ---    ---
+    0 B        0 B          0 B      50951    TOTAL
+
+======================================================================
+Summary Footprint: 80 MB
+======================================================================
+
+  Dirty      Clean  Reclaimable    Regions    Category
+    ---        ---          ---        ---    ---
+  25 MB        0 B          0 B        221    Untagged
+  24 MB        0 B          0 B        119    Malloc Small
+  10 MB        0 B          0 B        135    Malloc Metadata
+6024 KB        0 B          0 B         19    page table
+5086 KB        0 B          0 B       5453    __DATA
+2855 KB        0 B          0 B       5871    __DATA_DIRTY
+2608 KB        0 B          0 B         19    Malloc Tiny
+1331 KB        0 B          0 B      20520    unused dyld shared cache area
+ 927 KB        0 B          0 B         76    __TPRO_CONST
+ 720 KB        0 B          0 B         38    Stack
+ 696 KB        0 B          0 B         19    __OBJC_RW
+ 304 KB        0 B          0 B         19    Deferred Reclaim
+ 304 KB        0 B          0 B         19    Malloc Nano
+ 304 KB        0 B          0 B         19    OS Alloc Once
+  50 KB        0 B          0 B       2432    __AUTH
+  16 KB        0 B          0 B          1    Activity Tracing
+    0 B    5856 KB          0 B       7258    __TEXT
+    0 B    1088 KB          0 B        285    __LINKEDIT
+    0 B     528 KB          0 B       5985    __DATA_CONST
+    0 B      96 KB          0 B         39    mapped file
+    0 B        0 B          0 B       5795    __AUTH_CONST
+    0 B        0 B          0 B         19    __FONT_DATA
+    0 B        0 B          0 B         19    __OBJC_RO
+    ---        ---          ---        ---    ---
+  80 MB    7568 KB          0 B      54418    TOTAL

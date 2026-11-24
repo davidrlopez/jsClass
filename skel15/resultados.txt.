@@ -1,22 +1,32 @@
 Compilando en release (la primera vez tarda)...
 OK: php -S devuelve los 50 mensajes
-OK: Rust devuelve los 50 mensajes
+OK: Rust + SQLite devuelve los 50 mensajes
+OK: Rust + Postgres devuelve los 50 mensajes
 OK: nginx + php-fpm devuelve los 50 mensajes
 OK: OPcache activo en php-fpm
 
 2000 peticiones, 50 a la vez. Cada celda: peticiones por segundo (p99 en ms)
+Postgres con synchronous_commit=on
 Filas -k: con wrk durante 5 s, HTTP/1.1 como el navegador; el p99 lleva su unidad
-                               php -S      nginx + php-fpm                 Rust
-GET 50 filas                10128 (6)            16643 (3)            24020 (3)
-GET 50 filas -k          no reutiliza       26083 (3.54ms)       31430 (1.87ms)
-GET 0 filas                 11635 (5)            16483 (8)            26399 (2)
-GET 0 filas -k           no reutiliza       26068 (3.12ms)       67017 (0.95ms)
-POST                        1931 (81)           2314 (198)            3467 (48)
+                               php -S      nginx + php-fpm        Rust + SQLite      Rust + Postgres
+GET 50 filas                10045 (6)            16483 (3)           20965 (17)            15559 (5)
+GET 50 filas -k          no reutiliza       26994 (3.19ms)       31531 (1.93ms)       20798 (5.95ms)
+GET 0 filas                 11796 (5)            17378 (3)            24353 (3)            16174 (4)
+GET 0 filas -k           no reutiliza       27457 (3.63ms)       65895 (0.98ms)       24391 (2.63ms)
+POST                       2217 (132)           1851 (200)            3212 (32)           14652 (14)
 
 OK: php -S guardó los 2000 POST
 OK: nginx + php-fpm guardó los 2000 POST
-OK: Rust guardó los 2000 POST
-Memoria (RSS): php -S 60.9 MB
-               nginx + php-fpm 190.4 MB
-               Rust 12.4 MB
+OK: Rust + SQLite guardó los 2000 POST
+OK: Rust + Postgres guardó los 2000 POST
+Memoria (RSS): php -S 60.7 MB
+               nginx + php-fpm 190.9 MB
+               Rust + SQLite 12.1 MB (la base de datos va dentro del proceso)
+               Rust + Postgres 9.2 MB el binario, más Postgres 201.0 MB
+               (lo de Postgres es el RSS sumado de sus procesos: cuenta varias veces la memoria compartida y exagera)
+Huella sin contar dos veces lo compartido (footprint):
+  rust-sqlite: Footprint: 9280 KB
+  rust-postgres-binario: Footprint: 7136 KB
+  postgres: Footprint: 80 MB
+  php-fpm-nginx: Footprint: 105 MB
 Binario de Rust: 5.2M
